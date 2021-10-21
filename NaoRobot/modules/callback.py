@@ -9,7 +9,7 @@ from pyrogram.types import (
 from NaoRobot import pbot
 
 
-@pbot.on_callback_query(filters.regex("cbhelpp"))
+@pbot.on_callback_query(filters.regex("cbhlp"))
 async def cbhelp(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""Here is help menu, in this menu you can several the command
@@ -28,8 +28,8 @@ click the button to get the description of the command""",
                 ],
                 [
                     InlineKeyboardButton("Federation", callback_data="cbfed"),
+                    InlineKeyboardButton("Chatbot", callback_data="cbchatbot"),
                     InlineKeyboardButton("Fun", callback_data="cbfun"),
-                    InlineKeyboardButton("Greetings", callback_data="cbgreetings")
                 ],
                 [
                     InlineKeyboardButton("User", callback_data="cbuser"),
@@ -48,7 +48,6 @@ click the button to get the description of the command""",
                 ],
                 [
                     InlineKeyboardButton("Logomaker", callback_data="cblogo"),
-                    InlineKeyboardButton("Chatbot", callback_data="cbchatbot"),
                     InlineKeyboardButton("Filters", callback_data="cbfilters"),
                 ],
                 [
@@ -63,19 +62,30 @@ click the button to get the description of the command""",
 @pbot.on_callback_query(filters.regex("cbadmins"))
 async def cbadmins(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""Here is the admin permission""",
+        f"""Here is the help for the Admin module:
+
+Admins Play Major Roles To Manage A Group, We Have Created Some Hack Command In Our Bot So It Will Help To Manage Group Easily Via Bot.
+You Just Need To Give Commands To Bot And But Will Work for You. Click On Bellow Buttons & Get Detailed Information.
+ `• /admins`: list of admins in the chat""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Ban/Mute", callback_data="cbban"),
+                    InlineKeyboardButton("Ban", callback_data="cbban"),
                     InlineKeyboardButton("Approval", callback_data="cbapproval"),
-                    InlineKeyboardButton("Backup", callback_data="cbbackup")
+                    InlineKeyboardButton("Set Group", callback_data="cbgroup")
                 ],
                 [
-                    InlineKeyboardButton("Disabling", callback_data="cbdisabling")
+                    InlineKeyboardButton("Muting", callback_data="cbmute"),
+                    InlineKeyboardButton("Disabling", callback_data="cbdisabling"),
+                    InlineKeyboardButton("Purge", callback_data="cbpurge")
                 ],
                 [
-                    InlineKeyboardButton("🔙 Back", callback_data="cbhelpp"
+                    InlineKeyboardButton("Warns", callback_data="cbwarn"),
+                    InlineKeyboardButton("Welcome", callback_data="cbwelcome"),
+                    InlineKeyboardButton("Promote", callback_data="cbpromote")
+                ],
+                [
+                    InlineKeyboardButton("🔙 Back", callback_data="cbhlp"
                     )
                 ]
             ]
@@ -86,24 +96,35 @@ async def cbadmins(_, query: CallbackQuery):
 @pbot.on_callback_query(filters.regex("cbban"))
 async def cbban(_, query: CallbackQuery):
     await query.edit_message_text(
-        """Here is the help for the Bans/Mutes module:
+        """Here is the help for the Bans module:
 
-User Commands:
-  `• /kickme:` kicks the user who issued the command
-  
-Admins only:
+👮 Admins only:
+
   `• /ban` (userhandle): bans a user. (via handle, or reply)
-  banme
+  `• /banme`: banned yourself, don't try it.
   `• /sban` (userhandle): Silently ban a user. Deletes command, Replied message and doesn't reply. (via handle, or reply)
-  `• /tban (userhandle) x(m/h/d): bans a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
+  `• /tban` (userhandle) x(m/h/d): bans a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
   `• /unban` (userhandle): unbans a user. (via handle, or reply)
-  `• /kick` (userhandle): kicks a user out of the group, (via handle, or reply)
+  `• /kick` (userhandle): kicks a user out of the group, (via handle, or reply)""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🔙 Back", callback_data="cbadmins"
+                    )
+                ]
+            ]
+        ),
+    )
+
+@pbot.on_callback_query(filters.regex("cbmute"))
+async def cbmute(_, query: CallbackQuery):
+    await query.edit_message_text(
+        """👮 Admins only:
+
   `• /mute` (userhandle): silences a user. Can also be used as a reply, muting the replied to user.
   `• /tmute` (userhandle) x(m/h/d): mutes a user for x time. (via handle, or reply). m = minutes, h = hours, d = days.
-  `• /unmute` (userhandle): unmutes a user. Can also be used as a reply, muting the replied to user.
-  `• /zombies`: searches deleted accounts
-  `• /zombies clean`: removes deleted accounts from the group.
-  `• /snipe` (chatid) (string): Make me send a message to a specific chat.""",
+  `• /unmute` (userhandle): unmutes a user. Can also be used as a reply, muting the replied to user.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -117,7 +138,7 @@ Admins only:
 
 
 @pbot.on_callback_query(filters.regex("cbapproval"))
-async def cbapprov(_, query: CallbackQuery):
+async def cbapproval(_, query: CallbackQuery):
     await query.edit_message_text(
         """Here is the help for the Approvals module:
 
@@ -126,7 +147,8 @@ Maybe not enough to make them admin, but you might be ok with locks, blacklists,
 
 That's what approvals are for - approve of trustworthy users to allow them to send
 
-Admin commands:
+👮Admin commands:
+
 - `/approval`: Check a user's approval status in this chat.
 - `/approve`: Approve of a user. Locks, blacklists, and antiflood won't apply to them anymore.
 - `/unapprove`: Unapprove of a user. They will now be subject to locks, blacklists, and antiflood again.
@@ -144,16 +166,23 @@ Admin commands:
     )
 
 
-@pbot.on_callback_query(filters.regex("cbbackup"))
-async def cbbackup(_, query: CallbackQuery):
+@pbot.on_callback_query(filters.regex("cbgroup"))
+async def cbgroup(_, query: CallbackQuery):
     await query.edit_message_text(
-        """Here is the help for the Backups module:
+        """👮Admins only:
 
-Only for group owner:
-
- `• /import`: Reply to the backup file for the butler / emilia group to import as much as possible, making transfers very easy!  Note that files / photos cannot be imported due to telegram restrictions.
-
- `• /export`: Export group data, which will be exported are: rules, notes (documents, images, music, video, audio, voice, text, text buttons)""",
+  `• /pin`: silently pins the message replied to - add 'loud' or 'notify' to give notifs to users
+  `• /unpin`: unpins the currently pinned message
+  `• /invitelink`: gets invitelink
+  •` /setgtitle` (newtitle): Sets new chat title in your group.
+  `• /setgpic`: As a reply to file or photo to set group profile pic!
+  `• /delgpic`: Same as above but to remove group profile pic.
+  `• /setsticker`: As a reply to some sticker to set it as group sticker set!
+  `• /setdescription` (description): Sets new chat description in group.
+  `• /antispam` (on/off/yes/no): Will toggle our antispam tech or return your current settings.
+  `• /zombies`: searches deleted accounts
+  `• /zombies clean`: removes deleted accounts from the group.
+  `• /snipe` (chatid) (string): Make me send a message to a specific chat.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -169,11 +198,56 @@ Only for group owner:
 @pbot.on_callback_query(filters.regex("cbdisabling"))
 async def cbdisable(_, query: CallbackQuery):
     await query.edit_message_text(
+        """👮 Admins only:
+
+  `• /del`: deletes the message you replied to
+  `• /purge`: deletes all messages between this and the replied to message.
+  `• /purge` (integer X): deletes the replied message, and X messages following it if replied to a message.""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🔙 Back", callback_data="cbadmins"
+                    )
+                ]
+            ]
+        ),
+    )
+
+
+@pbot.on_callback_query(filters.regex("cbwelcome"))
+async def cbwelcome(_, query: CallbackQuery):
+    await query.edit_message_text(
+        """Here is the help for the Greetings module:
+
+👮 Admins only:
+
+  `• /welcome` (on/off): enable/disable welcome messages.
+  `• /welcome`: shows current welcome settings.
+  `• /welcome noformat`: shows current welcome settings, without the formatting - useful to recycle your welcome messages!
+  `• /goodbye`: same usage and args as /welcome.
+  `• /setwelcome` (sometext): set a custom welcome message. If used replying to media, uses that media.
+  `• /setgoodbye` (sometext): set a custom goodbye message. If used replying to media, uses that media.
+  `• /resetwelcome`: reset to the default welcome message.
+  `• /resetgoodbye`: reset to the default goodbye message.
+  `• /cleanwelcome` (on/off): On new member, try to delete the previous welcome message to avoid spamming the chat.
+  `• /welcomemutehelp`: gives information about welcome mutes.
+  `• /cleanservice` (on/off): deletes telegrams welcome/left service messages.
+ Example:
+user joined chat, user left chat.
+Welcome markdown:
+  `• /welcomehelp`: view more formatting information for custom welcome/goodbye messages.""",
+
+
+@pbot.on_callback_query(filters.regex("cbdisabling"))
+async def cbdisable(_, query: CallbackQuery):
+    await query.edit_message_text(
         """Here is the help for the Disabling module:
 
 • `/cmds`: check the current status of disabled commands
 
-Admins only:
+👮 Admins only:
+
 • `/enable` (cmd name): enable that command
 • `/disable` (cmd name): disable that command
 • `/enablemodule` (module name): enable all commands in that module
@@ -190,3 +264,18 @@ Admins only:
         ),
     )
 
+
+@pbot.on_callback_query(filters.regex("cbwarn"))
+async def cbwarn(_, query: CallbackQuery):
+    await query.edit_message_text(
+        """👮 Admins only:
+
+  `• /warns` <userhandle>: get a user's number, and reason, of warns.
+  `• /warnlist`: list of all current warning filters
+  `• /warn` (userhandle): warn a user. After 3 warns, the user will be banned from the group. Can also be used as a reply.
+  `• /dwarn` (userhandle): warn a user and delete the message. After 3 warns, the user will be banned from the group. Can also be used as a reply.
+  `• /resetwarn` (userhandle): reset the warns for a user. Can also be used as a reply.
+  `• /addwarn` (keyword) (reply message): set a warning filter on a certain keyword. If you want your keyword to   be a sentence, encompass it with quotes, as such: /addwarn "very angry" This is an angry user.
+  `• /nowarn` (keyword): stop a warning filter
+  `• /warnlimit` (number): set the warning limit
+  `• /strongwarn` (on/yes/off/no): If set to on, exceeding the warn limit will result in a ban. Else, will just punch.""",
