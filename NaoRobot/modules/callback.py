@@ -9,7 +9,7 @@ from pyrogram.types import (
 from NaoRobot import pbot
 
 
-@pbot.on_callback_query(filters.regex("cbhelp"))
+@pbot.on_callback_query(filters.regex("cbhelpp"))
 async def cbhelp(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""Here is help menu, in this menu you can several the command
@@ -75,7 +75,7 @@ async def cbadmins(_, query: CallbackQuery):
                     InlineKeyboardButton("Disabling", callback_data="cbdisabling")
                 ],
                 [
-                    InlineKeyboardButton("🔙 Back", callback_data="cbhelp"
+                    InlineKeyboardButton("🔙 Back", callback_data="cbhelpp"
                     )
                 ]
             ]
