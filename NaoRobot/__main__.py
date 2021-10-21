@@ -98,7 +98,7 @@ buttons = [
     [
         InlineKeyboardButton(text="Basic", callback_data="nao_"),
         InlineKeyboardButton(
-            text="Kontol!​​", callback_data="cbhelp"
+            text="Kontol!​​", callback_data="cbhelpp"
         ),
     ],
     [
