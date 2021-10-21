@@ -98,7 +98,7 @@ buttons = [
     [
         InlineKeyboardButton(text="Basic", callback_data="nao_"),
         InlineKeyboardButton(
-            text="Try inline!​​", switch_inline_query_current_chat=""
+            text="Kontol!​​", callback_data="cbhelp"
         ),
     ],
     [
