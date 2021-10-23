@@ -1,6 +1,3 @@
-# Copyright (C) 2021 NaoRobot
-# github account : https://github.com/KennedyProject/
-# This file is part of NaoRobot (Telegram Bot)
 
 
 import asyncio
