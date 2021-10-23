@@ -102,7 +102,7 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="Help & Command ❓", callback_data="cbhelpp"),
+        InlineKeyboardButton(text="Help & Command ❓", callback_data="cbhlp"),
     ],
 ]
 
