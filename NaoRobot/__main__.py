@@ -96,7 +96,7 @@ buttons = [
             text="➕️ Add Nao To Your Group ➕️", url="t.me/naoex_bot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="Basic", callback_data="nao_"),
+        InlineKeyboardButton(text="kontol", callback_data="help_back"),
         InlineKeyboardButton(
             text="Support​​", url="https://t.me/emikosupport"
         ),
