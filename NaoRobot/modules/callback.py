@@ -9,7 +9,7 @@ from pyrogram.types import (
 from NaoRobot import pbot
 
 
-@pbot.on_callback_query(filters.regex("cbhlp"))
+@pbot.on_callback_query(filters.regex("cbh"))
 async def cbhelp(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""Here is help menu, in this menu you can several the command
@@ -85,7 +85,7 @@ You Just Need To Give Commands To Bot And But Will Work for You. Click On Bellow
                     InlineKeyboardButton("Promote", callback_data="cbpromote")
                 ],
                 [
-                    InlineKeyboardButton("🔙 Back", callback_data="cbhlp"
+                    InlineKeyboardButton("🔙 Back", callback_data="cbh"
                     )
                 ]
             ]
