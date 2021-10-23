@@ -76,7 +76,7 @@ You Just Need To Give Commands To Bot And But Will Work for You. Click On Bellow
                 ],
                 [
                     InlineKeyboardButton("Muting", callback_data="cbmute"),
-                    InlineKeyboardButton("Disabling", callback_data="cbdisabling"),
+                    InlineKeyboardButton("Disabling", callback_data="cbdisabl"),
                     InlineKeyboardButton("Purge", callback_data="cbpurge")
                 ],
                 [
@@ -195,8 +195,8 @@ async def cbgroup(_, query: CallbackQuery):
     )
 
 
-@pbot.on_callback_query(filters.regex("cbdisabling"))
-async def cbdisable(_, query: CallbackQuery):
+@pbot.on_callback_query(filters.regex("cbpurge"))
+async def cbpurge(_, query: CallbackQuery):
     await query.edit_message_text(
         """👮 Admins only:
 
@@ -239,7 +239,7 @@ Welcome markdown:
   `• /welcomehelp`: view more formatting information for custom welcome/goodbye messages.""",
 
 
-@pbot.on_callback_query(filters.regex("cbdisabling"))
+@pbot.on_callback_query(filters.regex("cbdisabl"))
 async def cbdisable(_, query: CallbackQuery):
     await query.edit_message_text(
         """Here is the help for the Disabling module:
