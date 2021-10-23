@@ -237,6 +237,16 @@ async def cbwelcome(_, query: CallbackQuery):
 user joined chat, user left chat.
 Welcome markdown:
   `• /welcomehelp`: view more formatting information for custom welcome/goodbye messages.""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🔙 Back", callback_data="cbadmins"
+                    )
+                ]
+            ]
+        ),
+    )
 
 
 @pbot.on_callback_query(filters.regex("cbdisabl"))
