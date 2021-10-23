@@ -98,11 +98,11 @@ buttons = [
     [
         InlineKeyboardButton(text="Basic", callback_data="nao_"),
         InlineKeyboardButton(
-            text="Kontol!​​", callback_data="cbhelpp"
+            text="Support​​", url="https://t.me/emikosupport"
         ),
     ],
     [
-        InlineKeyboardButton(text="Help & Command ❓", callback_data="help_back"),
+        InlineKeyboardButton(text="Help & Command ❓", callback_data="cbhelpp"),
     ],
 ]
 
