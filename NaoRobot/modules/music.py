@@ -232,5 +232,5 @@ async def lyrics_func(_, message):
     lyrics = song.result
     if len(lyrics) < 4095:
         return await m.edit(f"**__{lyrics}__**")
-    lyrics = await paste(lyrics)
+    lyrics = await hastebin(lyrics)
     await m.edit(f"**LYRICS_TOO_LONG:** [URL]({lyrics})")
