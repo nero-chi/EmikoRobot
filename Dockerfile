@@ -68,8 +68,8 @@ RUN pip3 install --upgrade pip setuptools
 RUN git clone -b shiken https://github.com/kennedy-ex/EmikoRobot /root/EmikoRobot
 WORKDIR /root/EmikoRobot
 
-#Copy config file to /root/EmikoRobot/EmikoRobot
-COPY ./EmikoRobot/sample_config.py ./EmikoRobot/config.py* /root/EmikoRobot/EmikoRobot/
+#Copy config file to /root/Genos/Genos
+COPY ./Genos/sample_config.py ./Genos/config.py* /root/Genos/Genos/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","EmikoRobot"]
+CMD ["python3","-m","Genos"]
