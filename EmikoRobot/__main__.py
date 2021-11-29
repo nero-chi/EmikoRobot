@@ -83,18 +83,18 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 *Hello {} !*
 ────────────────────────
-✪ I'm an anime theme bot designed to help manage your telegram group with a lot features.
-✪ Maintained by @excrybaby ✨
+∞ I'm an anime theme bot designed to help manage your telegram group with a lot features ✨.
+✪ Rey Ganteng @FreddyZ1 🦾
 ────────────────────────
-Hit the /help to see available command.
+☞ Hit the /help to see available command.
 """
 
 buttons = [
     [
-        InlineKeyboardButton(text="Help & Command", callback_data="help_back"),
+        InlineKeyboardButton(text=" «Help & Command» ", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="About Emiko", callback_data="emiko_"),
+        InlineKeyboardButton(text=" ⟨About Genos⟩ ", callback_data="emiko_"),
         InlineKeyboardButton(
             text="Try inline!​​", switch_inline_query_current_chat=""
         ),
@@ -104,12 +104,12 @@ buttons = [
             text="Source Code", url="https://github.com/kennedy-ex/emikorobot"
         ),
         InlineKeyboardButton(
-            text="Support Chat", url=f"https://t.me/{SUPPORT_CHAT}"
+            text="Support Chat", url=f"https://t.me/GenoosSupport"
         ),
     ],
     [
         InlineKeyboardButton(
-            text="➗ Add Emiko To Your Group ➗", url="t.me/EmiexRobot?startgroup=new"),
+            text="✙ Add Genos To Your Group ✙", url="t.me/GenosTmpanBot?startgroup=new"),
     ],
 ]
 
@@ -117,10 +117,10 @@ buttons = [
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-EMI_IMG = "https://telegra.ph/file/5ff1cb39902809148f07f.jpg"
+EMI_IMG = "https://telegra.ph/file/020805c76bd1f386d446c.jpg"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @excrybaby \
+DONATE_STRING = """Heyy, glad to hear you want to donate!
+ You can support the project by contaction @FreddyZ1 \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -236,7 +236,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<b>Hi I'm Emiko robot!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
+            f"<b>Hai I'm Genos robot!</b>\n<b>Started working since:</b> <code>{uptime}</code>",
             parse_mode=ParseMode.HTML
        )
 
@@ -367,15 +367,15 @@ def emiko_about_callback(update, context):
     query = update.callback_query
     if query.data == "emiko_":
         query.message.edit_text(
-            text="๏ I'm *Emiko*, a powerful group management bot built to help you manage your group easily."
+            text="✪ I'm *Genos*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
             "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n_Emiko's licensed under the GNU General Public License v3.0_"
-            "\n\n Click on button bellow to get basic help for EmikoRobot.",
+            "\n\n_Genos's licensed under the GNU General Public License v3.0_"
+            "\n\n Click on button bellow to get basic help for GenosRobot.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -385,7 +385,7 @@ def emiko_about_callback(update, context):
                     InlineKeyboardButton(text="Notes", callback_data="emiko_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="Support", callback_data="emiko_support"),
+                    InlineKeyboardButton(text="Sungpport", callback_data="emiko_support"),
                     InlineKeyboardButton(text="Credits", callback_data="emiko_credit"),
                  ],
                  [
@@ -414,8 +414,8 @@ def emiko_about_callback(update, context):
 
     elif query.data == "emiko_admin":
         query.message.edit_text(
-            text=f"*๏ Let's make your group bit effective now*"
-            "\nCongragulations, EmikoRobot now ready to manage your group."
+            text=f"*✪ » Let's make your group bit effective now*"
+            "\nCongragulations, GenosRobot now ready to manage your group."
             "\n\n*Admin Tools*"
             "\nBasic Admin tools help you to protect and powerup your group."
             "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -431,7 +431,7 @@ def emiko_about_callback(update, context):
 
     elif query.data == "emiko_notes":
         query.message.edit_text(
-            text=f"<b>๏ Setting up notes</b>"
+            text=f"<b>㊥ Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
             f"\nto get a note simply use # at the beginning of a word"
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
@@ -442,14 +442,14 @@ def emiko_about_callback(update, context):
         )
     elif query.data == "emiko_support":
         query.message.edit_text(
-            text="*๏ Emiko support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on Emiko.",
+            text="*✙ Genos sungpport chats ✙*"
+            "\nJoin My Support Group/Channel/Owner for see or report a problem on Genos.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="t.me/emikosupport"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/KennedyProject"),
+                    InlineKeyboardButton(text="Support", url="https://t.me/GenoosSupport"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/genossupdatee"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="emiko_"),
@@ -462,13 +462,13 @@ def emiko_about_callback(update, context):
 
     elif query.data == "emiko_credit":
         query.message.edit_text(
-            text=f"<b>๏ Credis for Emiko</b>\n"
-            f"\nHere Developers Making The EmikoRobot",
+            text=f"<b>๏ Credis for Genos</b>\n"
+            f"\nHere Developers Making The GenosRobot",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Sena", url="t.me/xxskfi"),
+                    InlineKeyboardButton(text="Freddy(Rey)", url="t.me/FreddyZ1"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="emiko_"),
@@ -482,15 +482,15 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text="๏›› This advance command for Musicplayer."
-            "\n\n๏ Command for admins only."
+            text="‡›› This advance command for Musicplayer."
+            "\n\n☞ Command for admins only."
             "\n • `/reload` - For refreshing the adminlist."
             "\n • `/pause` - To pause the playback."
             "\n • `/resume` - To resuming the playback You've paused."
             "\n • `/skip` - To skipping the player."
             "\n • `/end` - For end the playback."
             "\n • `/musicplayer <on/off>` - Toggle for turn ON or turn OFF the musicplayer."
-            "\n\n๏ Command for all members."
+            "\n\n☞ Command for all members."
             "\n • `/play` <query /reply audio> - Playing music via YouTube."
             "\n • `/playlist` - To playing a playlist of groups or your personal playlist",
             parse_mode=ParseMode.MARKDOWN,
@@ -740,7 +740,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1606221784:
+        if OWNER_ID != 2002507433:
             update.effective_message.reply_text(
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
                 "[My Channel]({})".format(DONATION_LINK),
@@ -756,7 +756,7 @@ def donate(update: Update, context: CallbackContext):
             )
 
             update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!"
+                "I've PM'ed you about donating to my FreddyGntg!"
             )
         except Unauthorized:
             update.effective_message.reply_text(
@@ -789,7 +789,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                f"""**Emiko Robot Started!**
+                f"""**Genos Robot Started!**
 
 **Python:** `{memek()}`
 **Telegram Library:** `v{peler}`""",
