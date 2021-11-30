@@ -65,7 +65,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/EmikoRobot 
-RUN git clone -b shiken https://github.com/reygabuttt/EmikoRobot /root/EmikoRobot
+RUN git clone -b shiken https://github.com/kennedy-ex/EmikoRobot /root/EmikoRobot
 WORKDIR /root/EmikoRobot
 
 #Copy config file to /root/EmikoRobot/EmikoRobot
