@@ -2,7 +2,7 @@
   <img src="https://telegra.ph/file/8c878f8dbd800c73a2d67.jpg">
 </p>
 
-<h4><p align="center"> EMIKO ROBOT </p></h4>
+<h4><p align="center"> yue bot </p></h4>
 
 <p align="center">Emiko Robot is a modular bot running on python3 with anime theme and have a lot features.</p>
 
