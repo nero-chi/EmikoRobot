@@ -102,7 +102,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="➗ Add Yue To Your Group ➗", url="t.me/EmiexRobot?startgroup=true"),
+            text="➗ Add Yue To Your Group ➗", url="t.me/Aletia_bot?startgroup=true"),
     ],
 ]
 
