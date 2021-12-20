@@ -18,7 +18,7 @@ ffmpeg-python
 spongemock
 zalgo-text
 geopy
-nltk
+nltk.txt
 psutil
 aiohttp
 Pillow
