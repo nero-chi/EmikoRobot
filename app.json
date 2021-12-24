@@ -1,5 +1,5 @@
 {
-      "name": "Emiko Robot",
+      "name": "ben Tennyson",
       "description": "A Powerful  Telegram group management bot with anime theme.",
       "keywords": [
          "telegram",
@@ -56,7 +56,7 @@
 
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
-         "required": true,
+         "required": false,
          "value": "" 
       },
       "HEROKU_API_KEY": {
@@ -69,27 +69,27 @@
       },
       "BOT_USERNAME": {
          "description": "username of your bot without the @",
-         "value": "emiexrobot"
+         "value": "ben_tenyson_bot"
       },
 
       "BOT_ID": {
          "description": "to get your bot_id using other bot or userbot",
-         "value": ""
+         "value": "1926801217"
       },
 
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "excrybaby"
+         "value": "harshahero"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": "emikosupport"
+         "value": "sctbotssupport"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
          "required": true,
-         "value": ""
+         "value": "mongodb+srv://akugay:akugay@cluster22.ly1qn.mongodb.net/akugay?retryWrites=true&w=majority"
       },
       "IBM_WATSON_CRED_URL": {
          "description": "This is required for the speech to text module. Get your USERNAME from https://console.bluemix.net/docs/services/speech-to-text/getting-started.html",
