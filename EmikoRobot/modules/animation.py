@@ -277,7 +277,6 @@ def kill(update: Update, context: CallbackContext):
     msg.edit_text("⚰")
 
 
-
 KILL_HANDLER = DisableAbleCommandHandler("kill", kill, run_async=True)
 LOVE_HANDLER = DisableAbleCommandHandler("love", love, run_async=True)
 HACK_HANDLER = DisableAbleCommandHandler("hack", hack, run_async=True)

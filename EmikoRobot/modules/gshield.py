@@ -30,6 +30,7 @@ client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
 db = client["LaylaRobot"]
 
+
 async def is_nsfw(event):
     lmao = event
     if not (
@@ -314,5 +315,6 @@ async def del_profanity(event):
                     dev = await event.respond(final)
                     await asyncio.sleep(10)
                     await dev.delete()
+
 
 __mod_name__ = "Shield"

@@ -67,9 +67,7 @@ def do(func, bot, update):
     env = namespace_of(update.message.chat_id, update, bot)
 
     os.chdir(os.getcwd())
-    with open(
-        os.path.join(os.getcwd(), "output.txt"), "w"
-    ) as temp:
+    with open(os.path.join(os.getcwd(), "output.txt"), "w") as temp:
         temp.write(body)
 
     stdout = io.StringIO()

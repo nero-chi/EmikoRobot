@@ -15,13 +15,12 @@ from EmikoRobot.ex_plugins.dbfunctions import (
     karma_off,
     karma_on,
     update_karma,
-)      
+)
 from EmikoRobot.utils.filter_groups import karma_negative_group, karma_positive_group
 from EmikoRobot import arq
 
 regex_upvote = r"^((?i)\+|\+\+|\+1|thx|thanx|thanks|pro|cool|good|👍)$"
 regex_downvote = r"^(\-|\-\-|\-1|👎|noob|weak)$"
-
 
 
 @app.on_message(
@@ -48,18 +47,14 @@ async def upvote(_, message):
     chat_id = message.chat.id
     user_id = message.reply_to_message.from_user.id
     user_mention = message.reply_to_message.from_user.mention
-    current_karma = await get_karma(
-        chat_id, await int_to_alpha(user_id)
-    )
+    current_karma = await get_karma(chat_id, await int_to_alpha(user_id))
     if current_karma:
-        current_karma = current_karma['karma']
+        current_karma = current_karma["karma"]
         karma = current_karma + 1
     else:
         karma = 1
     new_karma = {"karma": karma}
-    await update_karma(
-        chat_id, await int_to_alpha(user_id), new_karma
-    )
+    await update_karma(chat_id, await int_to_alpha(user_id), new_karma)
     await message.reply_text(
         f"Incremented Karma of {user_mention} By 1 \nTotal Points: {karma}"
     )

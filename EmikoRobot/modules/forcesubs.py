@@ -51,8 +51,8 @@ def _onUnMuteRequest(client, cb):
                 )
         else:
             if (
-                    not client.get_chat_member(chat_id, (client.get_me()).id).status
-                        == "administrator"
+                not client.get_chat_member(chat_id, (client.get_me()).id).status
+                == "administrator"
             ):
                 client.send_message(
                     chat_id,
@@ -74,9 +74,9 @@ def _check_member(client, message):
     if chat_db:
         user_id = message.from_user.id
         if (
-                not client.get_chat_member(chat_id, user_id).status
-                    in ("administrator", "creator")
-                and not user_id in SUDO_USERS
+            not client.get_chat_member(chat_id, user_id).status
+            in ("administrator", "creator")
+            and not user_id in SUDO_USERS
         ):
             channel = chat_db.channel
             try:
@@ -136,7 +136,7 @@ def config(client, message):
                 )
                 try:
                     for chat_member in client.get_chat_members(
-                            message.chat.id, filter="restricted"
+                        message.chat.id, filter="restricted"
                     ):
                         if chat_member.restricted_by.id == (client.get_me()).id:
                             client.unban_chat_member(chat_id, chat_member.user.id)

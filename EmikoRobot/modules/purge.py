@@ -51,6 +51,7 @@ async def purge_messages(event):
     text = f"Purged Successfully in {time_:0.2f} Second(s)"
     await event.respond(text, parse_mode="markdown")
 
+
 async def delete_messages(event):
     if event.from_id is None:
         return
@@ -76,6 +77,7 @@ async def delete_messages(event):
     chat = await event.get_input_chat()
     del_message = [message, event.message]
     await event.client.delete_messages(chat, del_message)
+
 
 PURGE_HANDLER = purge_messages, events.NewMessage(pattern="^[!/]purge$")
 DEL_HANDLER = delete_messages, events.NewMessage(pattern="^[!/]del$")
