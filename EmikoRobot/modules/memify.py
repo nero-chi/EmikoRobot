@@ -1,8 +1,8 @@
 import textwrap
 import os
 from PIL import Image, ImageFont, ImageDraw
-from EmikoRobot.events import register
-from EmikoRobot import LOGGER, TEMP_DOWNLOAD_DIRECTORY, telethn as bot
+from MashaRoBot.events import register
+from MashaRoBot import LOGGER, TEMP_DOWNLOAD_DIRECTORY, telethn as bot
 
 
 @register(pattern="^/mmf ?(.*)")
@@ -39,7 +39,7 @@ async def drawText(image_path, text):
     if os.name == "nt":
         fnt = "ariel.ttf"
     else:
-        fnt = "./EmikoRobot/resources/default.ttf"
+        fnt = "./MashaRoBot/resources/Chopsic.otf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")
