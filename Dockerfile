@@ -1,7 +1,7 @@
 FROM debian:11
 FROM python:3.10.1-slim-buster
 
-WORKDIR /EmikoRobot/
+WORKDIR /VylanXRobot/
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get -y install git
@@ -14,4 +14,4 @@ RUN pip3 install wheel
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 
 COPY . .
-CMD ["python3.9", "-m", "EmikoRobot"]
+CMD ["python3.9", "-m", "VylanXRobot"]
