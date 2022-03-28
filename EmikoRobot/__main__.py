@@ -93,10 +93,10 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="Tentang Lanzi Robot", callback_data="Vylan_"),
+        InlineKeyboardButton(text="📣 Tentang Lanzi Robot 📣", callback_data="Vylan_"),
     ],
     [
-        InlineKeyboardButton(text="Dapatkan bantuan", callback_data="help_back"),
+        InlineKeyboardButton(text="🔧 Dapatkan bantuan 🔧", callback_data="help_back"),
         InlineKeyboardButton(
             text="Try inline!​​", switch_inline_query_current_chat=""
         ),
