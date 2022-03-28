@@ -83,27 +83,27 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *Hello {} !*
-✪ I'm an anime-theme management bot [✨] https://telegra.ph/VylanXRobot-03-08
+✪ I'm an Lanzi Robot [✨] https://telegra.ph/vvylan-03-28
 ────────────────────────
 × *Uptime:* `{}`
 × `{}` *users, across* `{}` *chats.*
 ────────────────────────
-✪ Hit /help to see my available commands.
+✪ Ketik /help Untuk Menampilkan Bantuan.
 """
 
 buttons = [
     [
-        InlineKeyboardButton(text="AboutVylanXRobot", callback_data="Vylan_"),
+        InlineKeyboardButton(text="Tentang Lanzi Robot", callback_data="Vylan_"),
     ],
     [
-        InlineKeyboardButton(text="Get Help", callback_data="help_back"),
+        InlineKeyboardButton(text="Dapatkan bantuan", callback_data="help_back"),
         InlineKeyboardButton(
             text="Try inline!​​", switch_inline_query_current_chat=""
         ),
     ],
     [
         InlineKeyboardButton(
-            text="➗ Add Vylan To Your Group ➗", url=f"t.me/{bu}?startgroup=new"),
+            text="🔗 Masukan Lanzi Ke Group 🔗", url=f"t.me/{bu}?startgroup=new"),
     ],
 ]
 
