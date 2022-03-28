@@ -83,7 +83,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *Hello {} !*
-✪ I'm an Lanzi Robot [✨] https://telegra.ph/vvylan-03-28
+✪ I'm an Lanzi Robot [✨] https://telegra.ph/Lanzi-Robot-03-28
 ────────────────────────
 × *Uptime:* `{}`
 × `{}` *users, across* `{}` *chats.*
@@ -93,7 +93,7 @@ PM_START_TEXT = """
 
 buttons = [
     [
-        InlineKeyboardButton(text="📣 Tentang Lanzi Robot 📣", callback_data="Vylan_"),
+        InlineKeyboardButton(text="📣 Tentang Lanzi Robot 📣", callback_data="https://t.me/pilannn"),
     ],
     [
         InlineKeyboardButton(text="🔧 Dapatkan bantuan 🔧", callback_data="help_back"),
