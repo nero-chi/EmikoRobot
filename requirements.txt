@@ -83,3 +83,4 @@ img2pdf
 multicolorcaptcha
 loguru
 yt-dlp
+git+https://github.com/python-telegram-bot/ptbcontrib.git
