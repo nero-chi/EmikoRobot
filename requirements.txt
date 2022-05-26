@@ -5,7 +5,7 @@ wget
 gtts
 beautifulsoup4
 requests
-python-telegram-bot==13.11
+python-telegram-bot==13.12
 SQLAlchemy==1.4.36
 psycopg2-binary
 feedparser
