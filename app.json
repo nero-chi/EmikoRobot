@@ -1,12 +1,12 @@
 {
       "name": "Emiko Robot",
-      "description": "A Powerful  Telegram group management bot with anime theme.",
+      "description": "A Powerful Telegram group management bot with anime theme.",
       "keywords": [
          "telegram",
          "advance",
          "group",
          "manager",
-         "naorobot"
+         "emikorobot"
       ],
     
    "logo":    "https://telegra.ph/file/35e56ba7eace7332356ad.jpg",  
@@ -48,7 +48,6 @@
          "required": true,
          "value": "2088106582"
      },
-
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
          "required": true,
@@ -66,12 +65,10 @@
          "description": "username of your bot without the @",
          "value": "emiexrobot"
       },
-
       "BOT_ID": {
          "description": "to get your bot_id using other bot or userbot",
          "value": ""
       },
-
       "OWNER_USERNAME": {
          "description": "Your username without the @",
          "value": "excrybaby"
@@ -113,14 +110,12 @@
          "description": "Required for timezone information. Get yours from https://timezonedb.com/api",
          "required": true,
          "value": "-xyz"
-     }, 
-
+     },
       "OPENWEATHERMAP_ID": {
         "description": "Get your own API from https://api.openweathermap.org/data/2.5/weather",
         "value": "",
         "required": false
       },
-
       "DEV_USERS": {
          "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Masha support then keep the current ID's here at they are and add yours.",
          "required": false,
@@ -135,7 +130,6 @@
             "description": "Get this from @ARQRobot.",
             "required": true
         },
-
       "SPAMWATCH_API": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
          "required": false,
