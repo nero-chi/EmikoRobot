@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-from EmikoRobot import DB_URL, LOGGER
+from Ryuujin import DB_URL, LOGGER
 
 
 if DB_URL and DB_URL.startswith("postgres://"):
