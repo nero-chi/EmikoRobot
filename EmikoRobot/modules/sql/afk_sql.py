@@ -3,7 +3,7 @@ import threading
 
 from sqlalchemy import Boolean, Column, BigInteger, UnicodeText
 
-from EmikoRobot.modules.sql import BASE, SESSION
+from Ryuujin.modules.sql import BASE, SESSION
 
 
 class AFK(BASE):
