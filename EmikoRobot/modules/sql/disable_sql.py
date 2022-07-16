@@ -3,7 +3,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, distinct, func
 
-from EmikoRobot.modules.sql import BASE, SESSION
+from Ryuujin.modules.sql import BASE, SESSION
 
 
 class Disable(BASE):
