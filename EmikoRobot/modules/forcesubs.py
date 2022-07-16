@@ -50,7 +50,9 @@ def _onUnMuteRequest(client, cb):
                     show_alert=True,
                 )
         else:
-            if (not client.get_chat_member(chat_id, (client.get_me()).id).status == "administrator"
+            if (
+                not client.get_chat_member(chat_id, (client.get_me()).id).status
+                == "administrator"
             ):
                 client.send_message(
                     chat_id,
@@ -71,7 +73,9 @@ def _check_member(client, message):
     chat_db = sql.fs_settings(chat_id)
     if chat_db:
         user_id = message.from_user.id
-        if (not client.get_chat_member(chat_id, user_id).status in ("administrator", "creator")
+        if (
+            not client.get_chat_member(chat_id, user_id).status
+            in ("administrator", "creator")
             and not user_id in SUDO_USERS
         ):
             channel = chat_db.channel

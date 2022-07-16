@@ -316,7 +316,6 @@ if is_module_loaded(FILENAME):
     def __chat_settings__(chat_id, user_id):
         return build_curr_disabled(chat_id)
 
-
     __help__ = """
 ❂ /cmds*:* check the current status of disabled commands
 

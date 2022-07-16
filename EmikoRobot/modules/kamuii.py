@@ -29,9 +29,7 @@ async def _(fry):
             msg = await conv.send_message(reply_message)
             if level:
                 m = f"/deepfry {level}"
-                msg_level = await conv.send_message(
-                    m,
-                    reply_to=msg.id)
+                msg_level = await conv.send_message(m, reply_to=msg.id)
                 r = await conv.get_response()
                 response = await conv.get_response()
             else:
@@ -45,24 +43,22 @@ async def _(fry):
             await fry.edit(f"`Error, tell the problem on @{SUPPORT_CHAT}`")
         else:
             downloaded_file_name = await ubot2.download_media(
-                response.media,
-                TEMP_DOWNLOAD_DIRECTORY
+                response.media, TEMP_DOWNLOAD_DIRECTORY
             )
             await tbot.send_file(
                 fry.chat_id,
                 downloaded_file_name,
                 force_document=False,
-                reply_to=message_id_to_reply
+                reply_to=message_id_to_reply,
             )
             """ - cleanup chat after completed - """
             try:
                 msg_level
             except NameError:
-                await ubot2.delete_messages(conv.chat_id,
-                                                 [msg.id, response.id])
+                await ubot2.delete_messages(conv.chat_id, [msg.id, response.id])
             else:
                 await ubot2.delete_messages(
-                    conv.chat_id,
-                    [msg.id, response.id, r.id, msg_level.id])
+                    conv.chat_id, [msg.id, response.id, r.id, msg_level.id]
+                )
     await kntl.delete()
     return os.remove(downloaded_file_name)

@@ -268,7 +268,8 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\nSuccessfully give a money to {user_member.first_name} for to be a Trader!",
+        rt
+        + f"\nSuccessfully give a money to {user_member.first_name} for to be a Trader!",
     )
 
     log_message = (
@@ -537,7 +538,9 @@ def devlist(update: Update, context: CallbackContext):
 
 
 SUDO_HANDLER = CommandHandler(("addsudo", "addemperor"), addsudo, run_async=True)
-SUPPORT_HANDLER = CommandHandler(("addsupport", "addcaptain"), addsupport, run_async=True)
+SUPPORT_HANDLER = CommandHandler(
+    ("addsupport", "addcaptain"), addsupport, run_async=True
+)
 TIGER_HANDLER = CommandHandler(("addsoldier"), addtiger, run_async=True)
 WHITELIST_HANDLER = CommandHandler(
     ("addwhitelist", "addtrader"), addwhitelist, run_async=True

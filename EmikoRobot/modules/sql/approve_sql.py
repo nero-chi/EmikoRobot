@@ -54,9 +54,9 @@ def list_approved(chat_id):
     try:
         return (
             SESSION.query(Approvals)
-                .filter(Approvals.chat_id == str(chat_id))
-                .order_by(Approvals.user_id.asc())
-                .all()
+            .filter(Approvals.chat_id == str(chat_id))
+            .order_by(Approvals.user_id.asc())
+            .all()
         )
     finally:
         SESSION.close()

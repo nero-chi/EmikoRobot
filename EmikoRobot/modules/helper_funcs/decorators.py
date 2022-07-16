@@ -26,7 +26,7 @@ class EmikoHandler:
         pass_chat_data: bool = False,
         run_async: bool = True,
         can_disable: bool = True,
-        group: Optional[Union[int,str]] = 40,
+        group: Optional[Union[int, str]] = 40,
     ):
         def _command(func):
             try:
@@ -93,7 +93,7 @@ class EmikoHandler:
         pattern: Optional[str] = None,
         can_disable: bool = True,
         run_async: bool = True,
-        group: Optional[Union[int,str]] = 60,
+        group: Optional[Union[int, str]] = 60,
         friendly=None,
     ):
         def _message(func):
