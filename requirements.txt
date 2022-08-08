@@ -6,7 +6,7 @@ gtts
 beautifulsoup4
 requests
 python-telegram-bot==13.13
-SQLAlchemy==1.4.39
+SQLAlchemy==1.4.40
 psycopg2-binary
 feedparser
 faker
