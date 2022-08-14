@@ -43,7 +43,7 @@ ujson
 pretty_errors
 pygithub
 TgCrypto
-pyrogram==2.0.33
+pyrogram==2.0.40
 PyDictionary
 git+https://github.com/Sorrybabe/downloader
 youtube_search_python==1.4.9
