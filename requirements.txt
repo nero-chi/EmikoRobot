@@ -1,5 +1,5 @@
 future
-emoji
+emoji==1.7.0
 lxml
 wget
 gtts
