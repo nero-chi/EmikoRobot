@@ -9,7 +9,7 @@ from EmikoRobot import (
     TIGERS,
     WOLVES,
     dispatcher,
-) 
+)
 from EmikoRobot.modules.helper_funcs.chat_status import dev_plus
 from EmikoRobot.modules.helper_funcs.extraction import (
     extract_user,

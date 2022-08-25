@@ -15,25 +15,18 @@ spam_chats = []
 async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
-        return await event.respond("__This command can be use in groups and channels!__")
+        return await event.respond(
+            "__This command can be use in groups and channels!__"
+        )
 
     is_admin = False
     try:
-        partici_ = await client(GetParticipantRequest(
-            event.chat_id,
-            event.sender_id
-        ))
+        partici_ = await client(GetParticipantRequest(event.chat_id, event.sender_id))
     except UserNotParticipantError:
         is_admin = False
     else:
-        if (
-                isinstance(
-                    partici_.participant,
-                    (
-                            ChannelParticipantAdmin,
-                            ChannelParticipantCreator
-                    )
-                )
+        if isinstance(
+            partici_.participant, (ChannelParticipantAdmin, ChannelParticipantCreator)
         ):
             is_admin = True
     if not is_admin:
@@ -49,13 +42,16 @@ async def mentionall(event):
         msg = await event.get_reply_message()
         if msg == None:
             return await event.respond(
-                "__I can't mention members for older messages! (messages which are sent before I'm added to group)__")
+                "__I can't mention members for older messages! (messages which are sent before I'm added to group)__"
+            )
     else:
-        return await event.reply("__Reply to a message or give me some text to mention others!__")
+        return await event.reply(
+            "__Reply to a message or give me some text to mention others!__"
+        )
 
     spam_chats.append(chat_id)
     usrnum = 0
-    usrtxt = ''
+    usrtxt = ""
     async for usr in client.iter_participants(chat_id):
         if not chat_id in spam_chats:
             break
@@ -69,7 +65,7 @@ async def mentionall(event):
                 await msg.reply(usrtxt)
             await asyncio.sleep(2)
             usrnum = 0
-            usrtxt = ''
+            usrtxt = ""
     try:
         spam_chats.remove(chat_id)
     except:
@@ -80,21 +76,12 @@ async def mentionall(event):
 async def cancel_spam(event):
     is_admin = False
     try:
-        partici_ = await client(GetParticipantRequest(
-            event.chat_id,
-            event.sender_id
-        ))
+        partici_ = await client(GetParticipantRequest(event.chat_id, event.sender_id))
     except UserNotParticipantError:
         is_admin = False
     else:
-        if (
-                isinstance(
-                    partici_.participant,
-                    (
-                            ChannelParticipantAdmin,
-                            ChannelParticipantCreator
-                    )
-                )
+        if isinstance(
+            partici_.participant, (ChannelParticipantAdmin, ChannelParticipantCreator)
         ):
             is_admin = True
     if not is_admin:

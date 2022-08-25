@@ -48,12 +48,9 @@ def blackliststicker(update: Update, context: CallbackContext):
 
     split_text = split_message(sticker_list)
     for text in split_text:
-        if (
-            sticker_list
-            == "<b>List blacklisted stickers currently in {}:</b>\n".format(
-                chat_name,
-            ).format(html.escape(chat_name))
-        ):
+        if sticker_list == "<b>List blacklisted stickers currently in {}:</b>\n".format(
+            chat_name,
+        ).format(html.escape(chat_name)):
             send_message(
                 update.effective_message,
                 "There are no blacklist stickers in <b>{}</b>!".format(

@@ -4,7 +4,7 @@ from random import randint
 from time import time
 
 import aiohttp
-from EmikoRobot import aiohttpsession 
+from EmikoRobot import aiohttpsession
 from aiohttp import ClientSession
 
 from google_trans_new import google_translator
