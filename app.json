@@ -31,26 +31,26 @@
       "TOKEN": {
          "description": "Your bot token. Get one from @BotFather duh",
          "required": true,
-         "value": ""
+         "value": "6318546708:AAGQBTwfvaFHiiE7hEnRYZKJN2uyMrEAPAs"
       },
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "27288008"
       },
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "c5eae746d8e903fd9bf53752a96503b7"
       },    
       "OWNER_ID": {
          "description": "Your user ID as an integer.",
          "required": true,
-         "value": "2088106582"
+         "value": "5975303993"
      },
       "STRING_SESSION": {
          "description": "Fill with telethon string session.",
-         "required": true,
+         "required": false,
          "value": "" 
       },
       "HEROKU_API_KEY": {
@@ -63,7 +63,7 @@
       },
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "excrybaby"
+         "value": "jass"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
@@ -72,7 +72,7 @@
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
-         "required": true,
+         "required": false,
          "value": ""
       },
      "EVENT_LOGS": {
