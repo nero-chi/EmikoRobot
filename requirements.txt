@@ -1,6 +1,7 @@
 future
 emoji
 lxml
+spamwatch
 wget
 gtts
 beautifulsoup4
